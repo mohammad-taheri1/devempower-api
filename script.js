@@ -96,11 +96,6 @@ function displayHistory() {
   document.getElementById("history").innerHTML = list;
 }
 
-
-
-/**
- * Retrieve the dialog based on if the guess is wrong or correct 
- */
 function getDialog(dialogType, text){
   let dialog;
   switch(dialogType){
@@ -112,42 +107,24 @@ function getDialog(dialogType, text){
       break;
   }
   dialog += text;
-  dialog += "</div>"
+  dialog += "</div>";
   return dialog;
 }
 
 function showYouWon(){
   const text = "Awesome job, you got it!"
-  /**
-   * Retrieve the dialog using the getDialog() function
-   * and save it to variable called dialog
-   * HINT: Use the 'won' and text parameters 
-   */
-  // *CODE GOES BELOW HERE *
-
+  let dialog = getDialog("won", text)
   document.getElementById("result").innerHTML = dialog;
 }
 
 function showNumberAbove(){
   const text = "Your guess is too high!"
-  /**
-   * Retrieve the dialog using the getDialog() function
-   * and save it to variable called dialog
-   * HINT: Use the 'warning' and text parameters 
-   */
-  // *CODE GOES BELOW HERE *
-
+  let dialog = getDialog("warning", text);
   document.getElementById("result").innerHTML = dialog;
 }
 
 function showNumberBelow(){
   const text = "Your guess is too low!"
-  /**
-   * Retrieve the dialog using the getDialog() function
-   * and save it to variable called dialog
-   * HINT: Use the 'warning' and text parameters 
-   */
-  // *CODE GOES BELOW HERE *
-
+  let dialog = getDialog("warning", text);
   document.getElementById("result").innerHTML = dialog;
 }
