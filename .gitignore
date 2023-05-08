@@ -10,3 +10,5 @@ bin
 */data-mssql
 **/data-mssql
 *.user
+dotnet-tools.json
+PublishProfiles
