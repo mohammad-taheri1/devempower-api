@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace devempower_api.Core.Entities
+namespace DevEmpowerApiV6.Core.Entities
 {
     public class VideoEntity
     {

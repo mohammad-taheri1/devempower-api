@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace devempower_api.Migrations
+namespace DevEmpowerApiV6.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

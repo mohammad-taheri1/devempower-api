@@ -1,16 +1,24 @@
-﻿using devempower_api.Core.Context;
-using devempower_api.Core.Dtos;
-using devempower_api.Core.Entities;
+﻿using DevEmpowerApiV6.Core.Context;
+using DevEmpowerApiV6.Core.Dtos;
+using DevEmpowerApiV6.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace devempower_api.Controllers
+namespace DevEmpowerApiV6.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class VideosController : ControllerBase
     {
+        //[HttpGet]
+        //public IActionResult GetVideos()
+        //{
+        //    return Ok(new string[]
+        //    {
+        //        "a","b","c"
+        //    });
+        //}
 
         #region Constructor & Dependency Injection 
         // Access to DB
@@ -21,7 +29,6 @@ namespace devempower_api.Controllers
             _context = context;
         }
         #endregion
-
 
         // CRUD
         #region HttpPost CreateNewVideo 

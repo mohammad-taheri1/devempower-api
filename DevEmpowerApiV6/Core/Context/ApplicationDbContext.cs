@@ -1,7 +1,7 @@
-﻿using devempower_api.Core.Entities;
+﻿using DevEmpowerApiV6.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace devempower_api.Core.Context
+namespace DevEmpowerApiV6.Core.Context
 {
     public class ApplicationDbContext : DbContext
     {
