@@ -1,6 +1,16 @@
+using devempower_api.Core.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// DB Configuration
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("local"));
+});
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -15,6 +25,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(option =>
+{
+    option
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowAnyOrigin();
+
+});
 
 app.UseHttpsRedirection();
 
