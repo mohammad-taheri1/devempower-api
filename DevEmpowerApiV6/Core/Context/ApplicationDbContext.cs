@@ -10,5 +10,6 @@ namespace DevEmpowerApiV6.Core.Context
         }
 
         public DbSet<Video> Videos { get; set; }
+        public DbSet<JobCategory> JobCategories { get; set; }
     }
 }
