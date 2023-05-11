@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DevEmpowerApiV6.Core.Dtos
+namespace DevEmpowerApiV6.Core.Dtos.videos
 {
-    public class CreateVideoDto
+    public class EditVideoDto
     {
-        [MinLength(5)]
+        [MinLength(4)]
         public string Title { get; set; }
     }
 }

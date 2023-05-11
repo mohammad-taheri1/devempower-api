@@ -1,5 +1,6 @@
 ﻿using DevEmpowerApiV6.Core.Context;
 using DevEmpowerApiV6.Core.Dtos;
+using DevEmpowerApiV6.Core.Dtos.videos;
 using DevEmpowerApiV6.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,15 +12,6 @@ namespace DevEmpowerApiV6.Controllers
     [ApiController]
     public class VideosController : ControllerBase
     {
-        //[HttpGet]
-        //public IActionResult GetVideos()
-        //{
-        //    return Ok(new string[]
-        //    {
-        //        "a","b","c"
-        //    });
-        //}
-
         #region Constructor & Dependency Injection 
         // Access to DB
         private readonly ApplicationDbContext _context;
@@ -77,7 +69,7 @@ namespace DevEmpowerApiV6.Controllers
         #region HttpPatch UpdateVideo 
         [HttpPatch]
         [Route("{videoId}")]
-        public async Task<IActionResult> UpdateVideo([FromRoute] long videoId, [FromBody] CreateVideoDto dto)
+        public async Task<IActionResult> UpdateVideo([FromRoute] long videoId, [FromBody] EditVideoDto dto)
         {
             var video = await _context.Videos.FirstOrDefaultAsync(q => q.Id == videoId);
 
@@ -87,6 +79,7 @@ namespace DevEmpowerApiV6.Controllers
             }
 
             video.Title = dto.Title;
+            video.UpdatedAt = DateTime.Now;
             await _context.SaveChangesAsync();
 
             return Ok("Video updated successfully");
