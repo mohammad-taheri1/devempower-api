@@ -25,9 +25,9 @@ namespace DevEmpowerApiV6.Controllers
         // CRUD
         #region HttpPost CreateNewVideo 
         [HttpPost]
-        public async Task<ActionResult<VideoEntity>> CreateNewVideo([FromBody] CreateVideoDto dto)
+        public async Task<ActionResult<Video>> CreateNewVideo([FromBody] CreateVideoDto dto)
         {
-            var newVideo = new VideoEntity()
+            var newVideo = new Video()
             {
                 Title = dto.Title,
                 Url = CreateUniqueUrl()
@@ -42,7 +42,7 @@ namespace DevEmpowerApiV6.Controllers
 
         #region HttpGet GetAllVideos
         [HttpGet]
-        public async Task<ActionResult<List<VideoEntity>>> GetAllVideos()
+        public async Task<ActionResult<List<Video>>> GetAllVideos()
         {
             var videos = await _context.Videos.OrderByDescending(q => q.CreatedAt).ToListAsync();
 
@@ -53,7 +53,7 @@ namespace DevEmpowerApiV6.Controllers
         #region HttpGet GetVideoById 
         [HttpGet]
         [Route("{videoId}")]
-        public async Task<ActionResult<VideoEntity>> GetVideoById([FromRoute] long videoId)
+        public async Task<ActionResult<Video>> GetVideoById([FromRoute] long videoId)
         {
             var video = await _context.Videos.FirstOrDefaultAsync(q => q.Id == videoId);
 

@@ -2,7 +2,7 @@
 
 namespace DevEmpowerApiV6.Core.Entities
 {
-    public class VideoEntity : BaseEntity
+    public class Video : BaseEntity
     {
 
         public string Url { get; set; }

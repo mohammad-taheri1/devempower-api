@@ -9,6 +9,6 @@ namespace DevEmpowerApiV6.Core.Context
         {
         }
 
-        public DbSet<VideoEntity> Videos { get; set; }
+        public DbSet<Video> Videos { get; set; }
     }
 }
