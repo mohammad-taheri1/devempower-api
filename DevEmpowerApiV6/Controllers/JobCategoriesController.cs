@@ -1,6 +1,5 @@
 ﻿using DevEmpowerApiV6.Core.Context;
-using DevEmpowerApiV6.Core.Dtos;
-using DevEmpowerApiV6.Core.Dtos.JobCategories;
+using DevEmpowerApiV6.Core.DTO.JobCategories;
 using DevEmpowerApiV6.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

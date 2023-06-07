@@ -1,12 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace DevEmpowerApiV6.Core.Entities;
 
-namespace DevEmpowerApiV6.Core.Entities
+public class Video : BaseEntity
 {
-    public class Video : BaseEntity
-    {
 
-        public string Url { get; set; }
+    public string Url { get; set; }
 
-        public string Title { get; set; }
-    }
+    public string Title { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DevEmpowerApiV6.Core.Dtos;
+namespace DevEmpowerApiV6.Core.DTO.videos;
 
 public class CreateVideoDto
 {
