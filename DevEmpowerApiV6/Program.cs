@@ -1,3 +1,4 @@
+using DevEmpowerApiV6.Core.AutoMapper;
 using DevEmpowerApiV6.Core.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,8 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 // DB Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("local"));
+    var connectionString = builder.Configuration.GetConnectionString("local");
+    options.UseSqlServer(connectionString);
 });
+
+// Config AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperConfigProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
